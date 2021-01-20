@@ -12,4 +12,4 @@
 * Write custom Java code with knowledge of Java.
 * Using circleci to do the automated tests.
 
-* **Technique used:** Swagger 2.0, JAXB, MapStruct Postman, Java, SpringBoot 5, Maven, Spring MVC,   CI/CD
+ **Technique used:** Swagger 2.0, JAXB, MapStruct Postman, Java, SpringBoot 5, Maven, Spring MVC,   CI/CD
