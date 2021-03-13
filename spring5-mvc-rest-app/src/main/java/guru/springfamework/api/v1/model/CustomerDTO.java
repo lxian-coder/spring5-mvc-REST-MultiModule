@@ -2,11 +2,14 @@ package guru.springfamework.api.v1.model;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Darcy Xian  22/11/20  4:46 pm      spring5-mvc-rest
  */
-@Data
+@Getter
+@Setter
 public class CustomerDTO {
 
     private Long id;

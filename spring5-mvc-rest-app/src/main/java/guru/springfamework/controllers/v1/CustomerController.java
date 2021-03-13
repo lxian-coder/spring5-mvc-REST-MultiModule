@@ -1,8 +1,8 @@
 package guru.springfamework.controllers.v1;
 
 
-import guru.springfamework.model.CustomerDTO;
-import guru.springfamework.model.CustomerListDTO;
+import guru.springfamework.api.v1.model.CustomerListDTO;
+import guru.springfamework.api.v1.model.CustomerDTO;
 import guru.springfamework.services.CustomerService;
 
 
@@ -33,7 +33,7 @@ public class CustomerController {
     public CustomerListDTO getAllCustomers (){
 
         CustomerListDTO customerListDTO = new CustomerListDTO();
-        customerListDTO.getCustomerDTOs().addAll( customerService.findAllCustomers());
+        customerListDTO.getCustomerListDTOS().addAll( customerService.findAllCustomers());
         return customerListDTO;
     }
 
@@ -42,7 +42,6 @@ public class CustomerController {
     public CustomerDTO getCustomerById(@PathVariable Long id){
          CustomerDTO customerDTO =  customerService.findCustomerById(id);
          customerDTO.setCustomerUrl(BASE_URL + id);
-
 
         return customerDTO;
     }
