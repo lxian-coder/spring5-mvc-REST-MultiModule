@@ -56,7 +56,6 @@ public class CustomerControllerTest {
     @Test
     public void getAllCustomers() throws Exception {
         // given
-
         List<CustomerDTO> customerDTOS = Arrays.asList(new CustomerDTO(),new CustomerDTO(), new CustomerDTO());
         when(customerService.findAllCustomers()).thenReturn(customerDTOS);
 
@@ -65,7 +64,7 @@ public class CustomerControllerTest {
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.customerDTOs", hasSize(3)));
+                .andExpect(jsonPath("$.customerListDTOS", hasSize(3)));
     }
 
     @Test

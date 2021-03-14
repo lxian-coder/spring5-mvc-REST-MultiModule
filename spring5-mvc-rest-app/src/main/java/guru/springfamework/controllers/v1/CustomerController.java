@@ -10,8 +10,11 @@ import guru.springfamework.services.CustomerService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Darcy Xian  22/11/20  5:05 pm      spring5-mvc-rest
@@ -20,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(CustomerController.BASE_URL)
 @AllArgsConstructor
+@Slf4j
 public class CustomerController {
 
     public static final  String BASE_URL = "/api/v1/customers";
@@ -32,8 +36,9 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.OK)
     public CustomerListDTO getAllCustomers (){
 
-        CustomerListDTO customerListDTO = new CustomerListDTO();
-        customerListDTO.getCustomerListDTOS().addAll( customerService.findAllCustomers());
+
+        List<CustomerDTO> test = customerService.findAllCustomers();
+        CustomerListDTO customerListDTO = new CustomerListDTO(test);
         return customerListDTO;
     }
 
